@@ -2,8 +2,8 @@
 	<div class="card-body">
 		<p>{{item.origin}}</p>
 		<p>{{item.shortURL}}</p>
-		<a href="#" class="btn btn-danger">DELETE</a>
-		<a href="#" class="btn btn-warning">EDIT</a>
-		<a href="#" class="btn btn-info">ADD</a>
+		<a href="/delete/{{item._id}}" class="btn btn-danger">DELETE</a>
+		<a href="/edit/{{item._id}}" class="btn btn-warning">EDIT</a>
+		<button data-short="{{item.shortURL}}" href="#" class="btn btn-info">COPY</button>
 	</div>
 </article>
