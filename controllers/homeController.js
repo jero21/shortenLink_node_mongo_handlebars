@@ -62,12 +62,11 @@ const editUrl = async (req, res) => {
 }
 
 const redirectUrl = async (req, res) => {
-
-    const { shortUrl } = req.params
+    
+    const { shortURL } = req.params
     
     try {
-        const redirectUrl = await Url.findOne({shortURL: shortUrl})
-        console.log(redirectUrl)
+        const redirectUrl = await Url.findOne({shortURL: shortURL})
         res.redirect(redirectUrl.origin)
     } catch (error) {
         console.log(error)

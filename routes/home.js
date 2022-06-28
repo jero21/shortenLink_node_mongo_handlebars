@@ -8,6 +8,6 @@ router.post("/", validateUrl, addUrl)
 router.get("/delete/:id", deleteUrl)
 router.get("/edit/:id", editUrlForm)
 router.post("/edit/:id", validateUrl, editUrl)
-router.get("/:shortUrl", redirectUrl)
+router.get("/:shortURL", redirectUrl)
 
 module.exports = router
