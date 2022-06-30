@@ -40,10 +40,13 @@ userSchema.pre("save", async function(next) { //The functions have access to "th
         next()
     } catch (error) {
         console.log(error)
-        next()
+        throw new Error("Password encoding error")
     }
-
-
 })
+
+userSchema.methods.comparePassword = async function(candidatePassword) {
+    const user = this
+    return await bcrypt.compare(candidatePassword, user.password)
+}
  
 module.exports = mongoose.model('User', userSchema)
